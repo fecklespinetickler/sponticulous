@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRE IN THE HOL</title>
+
+    <style>
+        @keyframes hover {
+            from {width:360px; height:360px;}
+            to {width:450px; height: 450px;}
+        }
+
+        @keyframes unhover {
+            from {width:450px; height:450px;}
+            to {width:360px; height: 360px;}
+        }
+        .container {
+            display: flex;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+        }
+        .container > button {
+            border-color:rgba(0,0,0,0);
+            background-color: rgba(0,0,0,0);
+        }
+
+        .container > button, img {
+            width:450px;
+            height:450px;
+        }
+        .container > button:hover, img:hover{
+            animation-name: hover;
+            animation-duration: 1s;
+        }
+        .container > button:not(:hover), img:not(:hover){
+            width: 360px;
+            height:360px;
+            animation-name: unhover;
+            animation-duration: 1s;
+        }
+        .leftRightSpacer {
+            margin-left:auto;
+            margin-right:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="leftRightSpacer"></div>
+        <button onclick="fireinthehole()"><img src="normal.jpg" alt="Click."></button>
+        <div class="leftRightSpacer"></div>
+    </div>
+
+    <script>
+        function fireinthehole() {
+            const HOLEFIREINTHE = new Audio("FIRE IN THE HOLE.mp3");
+            HOLEFIREINTHE.play();
+        }
+        function goof() {
+            const SIMSONG = new Audio("DUN DUN DUN DUNN DUNN.mp3");
+            SIMSONG.play();
+        }
+    </script>
+</body>
+</html>
